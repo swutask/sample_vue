@@ -1,0 +1,105 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:18
+options:      
+  docker: true
+  size: 2x
+
+pipelines:
+  branches:
+    production:
+    - step:
+        name: Build
+        caches:
+          - node
+        script:
+          - npm ci
+          - yarn build
+          - ls -l
+        artifacts:
+          - dist/**
+    - step:
+       name: Upload to S3
+       script:
+        - pipe: atlassian/aws-s3-deploy:1.6.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            S3_BUCKET: $PROD_S3_BUCKET
+            LOCAL_PATH: 'dist'
+            CACHE_CONTROL: 'max-age=2592000'
+            EXTRA_ARGS: '--exclude=*.html'
+
+    - step:
+       name: Set cache control
+       script:
+        - pipe: atlassian/aws-s3-deploy:1.6.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            S3_BUCKET: $PROD_S3_BUCKET
+            LOCAL_PATH: 'dist'
+            CACHE_CONTROL: 'no-cache'
+            EXTRA_ARGS: '--exclude=*.js --exclude=*.css --exclude=*.gif --exclude=*.png --exclude=*.ico --exclude=*.jpg --exclude=*.svg --exclude=*.ttf --exclude=*.woff --exclude=*.json'
+
+    - step:
+       name: Invalidate CDN cache
+       script:
+        - pipe: atlassian/aws-cloudfront-invalidate:0.10.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            DISTRIBUTION_ID: $PROD_DISTRIBUTION_ID
+    stage:
+    - step:
+        name: Build
+        caches:
+          - node
+        script:
+          - npm ci
+          - yarn build
+          - ls -l
+        artifacts:
+          - dist/**
+    - step:
+       name: Upload to S3
+       script:
+        - pipe: atlassian/aws-s3-deploy:1.6.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            S3_BUCKET: $STAGE_S3_BUCKET
+            LOCAL_PATH: 'dist'
+            CACHE_CONTROL: 'max-age=2592000'
+            EXTRA_ARGS: '--exclude=*.html'
+
+    - step:
+       name: Set cache control
+       script:
+        - pipe: atlassian/aws-s3-deploy:1.6.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            S3_BUCKET: $STAGE_S3_BUCKET
+            LOCAL_PATH: 'dist'
+            CACHE_CONTROL: 'no-cache'
+            EXTRA_ARGS: '--exclude=*.js --exclude=*.css --exclude=*.gif --exclude=*.png --exclude=*.ico --exclude=*.jpg --exclude=*.svg --exclude=*.ttf --exclude=*.woff --exclude=*.json'
+
+    - step:
+       name: Invalidate CDN cache
+       script:
+        - pipe: atlassian/aws-cloudfront-invalidate:0.10.0
+          variables:
+            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+            AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+            DISTRIBUTION_ID: $STAGE_DISTRIBUTION_ID
+   

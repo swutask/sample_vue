@@ -1,0 +1,70 @@
+.vc-dark {
+  /* Base */
+  --vc-bg: rgb(var(--color-sidebar));
+}
+
+.vc-focus:focus-within {
+  box-shadow: none !important;
+}
+
+.vc-day {
+  min-height: 34px
+}
+
+.vc-day-content {
+  border-radius: 6px !important;
+  font-weight: 400 !important;
+
+  &:hover {
+    @apply bg-menu-hover text-app-color;
+  }
+}
+
+.vc-weekday {
+  color: #ccc;
+  font-weight: 500;
+}
+
+.vc-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgb(var(--color-app-color)) !important;
+}
+
+.vc-svg-icon {
+  @apply text-grey-300;
+
+  &:hover {
+    @apply text-app-color
+  }
+}
+
+.vc-arrow:hover {
+  @apply bg-menu-hover
+}
+
+.vc-popover-content-wrapper {
+  position: static !important;
+  transform: inherit !important
+}
+
+.vc-popover-caret.direction-bottom.align-left {
+  display: none;
+}
+
+.vc-popover-content {
+  border: none !important;
+  box-shadow: none !important;
+  margin-top: 0 !important;
+  & > span {
+    display: none !important;
+  }
+}
+
+.due-date .vc-container {
+  @apply border-none w-full;
+
+  &.vc-is-dark {
+    @apply bg-sidebar
+  }
+}

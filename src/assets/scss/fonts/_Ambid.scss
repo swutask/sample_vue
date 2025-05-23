@@ -1,0 +1,39 @@
+// regular
+@font-face {
+  font-family: 'Ambid';
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-regular.woff2'),
+url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-regular.woff2') format('woff2'),
+url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-regular.woff') format('woff')
+};
+
+// bold
+@font-face {
+  font-family: 'Ambid';
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-bold.woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-bold.woff2') format('woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold
+};
+
+// light
+@font-face {
+  font-family: 'Ambid';
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-light.woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-light.woff2') format('woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-light.woff') format('woff');
+  font-style: normal;
+  font-weight: 400
+};
+
+// italic
+@font-face {
+  font-family: 'Ambid';
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-italic.woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-italic.woff2') format('woff2'),
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Ambid/ambit-italic.woff') format('woff');
+  font-style: italic;
+  font-weight: normal;
+}

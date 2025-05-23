@@ -1,0 +1,27 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "dts/*",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "compilerOptions": {
+    "lib": ["es2015", "es2016", "es2017", "ES2019.Array", "dom", "es2018.promise", "ES2021"],
+    "allowJs": true,
+    "checkJs": false,
+    "strict": false,
+    "baseUrl": ".",
+    "types": ["unplugin-icons/types/vue"], // need to discuss
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["../*"],
+      "tailwind-config": ["./tailwind.config.cjs"]
+    }
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}

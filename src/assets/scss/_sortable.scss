@@ -1,0 +1,95 @@
+@mixin sortable-ghost-task {
+  min-height: 4px;
+  padding: 0;
+  box-shadow: none;
+  opacity: .25 !important;
+  background: theme('colors.blue.5fe2ff') !important;
+
+  & div {
+    visibility: hidden;
+  }
+}
+
+.my-sortable-ghost-task {
+  &--card {
+    @include sortable-ghost-task;
+  }
+
+  &--list {
+    @include sortable-ghost-task;
+    height: 40px;
+  }
+
+  &--today {
+    @include sortable-ghost-task;
+    border-radius: 12px;
+    background: transparent !important;
+    height: 46px;
+  }
+}
+
+.my-sortable-ghost-task div, .my-sortable-ghost-task button {
+  display: none;
+}
+
+.grab-class-task, .grab-class-task-mobile, .grab-class-task--today {
+  cursor: grab !important;
+  box-shadow: none;
+
+  &:active {
+    cursor: grabbing !important;
+  }
+}
+
+.grab-class-task--today {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.grab-class-task-mobile {
+  @apply rotate-1;
+}
+
+.force-fallback-light-task {
+  @apply shadow-event;
+  overflow: hidden;
+}
+
+.force-fallback-dark-task {
+  @apply border-2 border-grey-500;
+  min-height: 45px;
+}
+
+@mixin sortable-ghost-row {
+  padding: 0;
+  box-shadow: none !important;
+  border: none !important;
+  opacity: .25 !important;
+  background: theme('colors.blue.5fe2ff') !important;
+  border-radius: 10px;
+
+  & div {
+    visibility: hidden;
+  }
+}
+
+.sortable-ghost-row {
+  &-card {
+    @include sortable-ghost-row;
+    height: fit-content;
+
+    &:has(.minimized) {
+      height: 276px;
+    }
+  }
+
+  &-list {
+    @include sortable-ghost-row;
+    height: 50px;
+  }
+}
+
+.row-fallback-class {
+  border: none !important;
+  border-radius: 10px;
+}

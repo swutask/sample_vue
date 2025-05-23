@@ -1,0 +1,18 @@
+@tailwind base;
+
+@import "animation";
+@import "base";
+@import "fonts";
+@import "icomoon";
+@import "sortable";
+@import "workspace";
+@import "helpers";
+@import "calendar";
+@import "auth";
+@import "v-calendar";
+@import "colors";
+
+@import './../styles/element-reset';
+
+@tailwind components;
+@tailwind utilities;

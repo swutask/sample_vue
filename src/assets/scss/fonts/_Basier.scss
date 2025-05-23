@@ -1,0 +1,44 @@
+/* regular */
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-regular.eot');
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-regular.eot?#iefix') format('embedded-opentype'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-regular.woff2') format('woff2'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-regular.woff') format('woff'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-regular.ttf') format('truetype');
+}
+/* medium */
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: 500;
+  font-style: normal;
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-medium.eot');
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-medium.eot?#iefix') format('embedded-opentype'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-medium.woff2') format('woff2'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-medium.woff') format('woff'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-medium.ttf') format('truetype');
+}
+/* semibold */
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: 600;
+  font-style: normal;
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-semibold.eot');
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-semibold.eot?#iefix') format('embedded-opentype'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-semibold.woff2') format('woff2'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-semibold.woff') format('woff'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-semibold.ttf') format('truetype');
+}
+/* bold */
+@font-face {
+  font-family: 'Basier Circle';
+  font-weight: bold;
+  font-style: normal;
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-bold.eot');
+  src: url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-bold.eot?#iefix') format('embedded-opentype'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-bold.woff2') format('woff2'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-bold.woff') format('woff'),
+       url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Basier/basiercircle-bold.ttf') format('truetype');
+}

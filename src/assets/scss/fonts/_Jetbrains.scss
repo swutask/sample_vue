@@ -1,0 +1,24 @@
+/* regular */
+@font-face {
+  font-family: 'Jetbrains Mono';
+  font-weight: normal;
+  font-style: normal;
+  src:url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-Regular.ttf') format('truetype') /* Safari, Android, iOS */
+}
+/* bold */
+@font-face {
+  font-family: 'Jetbrains Mono';
+  font-weight: bold;
+  font-style: normal;
+  src:url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-Bold.ttf') format('truetype') /* Safari, Android, iOS */
+}
+/* extra bold */
+@font-face {
+  font-family: 'Jetbrains Mono';
+  font-weight: 800;
+  font-style: normal;
+  src:url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('https://helloivy-font.s3.eu-central-1.amazonaws.com/Jetbrains/JetBrainsMono-ExtraBold.ttf') format('truetype') /* Safari, Android, iOS */
+}

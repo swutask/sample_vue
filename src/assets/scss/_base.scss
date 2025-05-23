@@ -1,0 +1,237 @@
+html,
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  @apply h-full w-full bg-primary font-Inter;
+
+  @media (max-width: 767px) {
+    @apply bg-sidebar
+  }
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+html *, body * {
+  letter-spacing: -0.00666667em;
+}
+
+body {
+  font-size: 15px;
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    background: rgb(var(--color-scrollBarColor)) !important;
+    border-radius: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgb(var(--color-scrollBarThumbColor)) !important;
+
+    &:hover {
+      background: rgb(var(--color-scrollBarThumbHover)) !important;
+    }
+  }
+}
+
+#show-scrollbar-on-hover::-webkit-scrollbar, #show-scrollbar-on-hover::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+
+#show-scrollbar-on-hover:hover::-webkit-scrollbar {
+  background: rgb(var(--color-scrollBarColor)) !important;
+}
+
+#show-scrollbar-on-hover:hover::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-scrollBarThumbColor)) !important;
+
+  &:hover {
+    background:  rgb(var(--color-scrollBarThumbHover)) !important;
+  }
+}
+
+.thinner-scroll-bar::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.sticky-bottom-scroll-bar {
+  position: sticky;
+  bottom: 4px;
+}
+
+.super-thinner-scroll-bar::-webkit-scrollbar {
+  width: 3px !important;
+  height: 7px !important;
+}
+
+.lighter-scroll-bar::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-scrollBarThumbColor)) !important;
+}
+
+.task-row-scroll-bar::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 0 !important;
+}
+
+.task-row-scroll-bar::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-28;
+}
+
+h2 {
+  @apply text-22;
+}
+
+h3 {
+  @apply text-18;
+}
+
+ul {
+  li {
+    @apply relative pl-27;
+
+    &:before {
+      content: "\00b7";
+      font-size: 54px;
+      top: 6px;
+      @apply absolute left-0 text-main-color leading-tiny font-Lato;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 43px;
+  margin-left: -23px;
+}
+
+input:disabled, button:disabled {
+  pointer-events: none;
+  @apply cursor-default;
+}
+
+input:read-only:not(.custom-color) {
+  @apply text-grey-300;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+input:read-only:not(.book-input) {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.prevent-body-scroll, .prevent-body-scroll body {
+  @apply overflow-hidden;
+  @apply relative;
+  -webkit-overflow-scrolling: inherit !important;
+}
+
+input,
+select {
+  font-size: 100%;
+  @apply font-Inter
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+
+  &.no-border {
+    &:focus, &:active {
+      border: 0;
+    }
+  }
+
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+/*** iPhone and iOS Form Input Zoom Fixes ***/
+/* Fix Input Zoom on devices older than iPhone 5: */
+@media screen and (device-aspect-ratio: 2/3) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 16px;
+  }
+}
+
+/* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+@media screen and (device-aspect-ratio: 40/71) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 16px;
+  }
+}
+
+/* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+@media screen and (device-aspect-ratio: 375/667) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 16px;
+  }
+}
+
+.expanded {
+  transform: rotateZ(180deg) translateY(2px);
+}
+
+/* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+@media screen and (device-aspect-ratio: 9/16) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 16px;
+  }
+}
+
+textarea,
+input:matches(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"]
+) {
+  -webkit-appearance: none;
+}

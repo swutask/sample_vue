@@ -1,0 +1,23 @@
+.auth-title {
+  @apply text-26 font-bold leading-[1.2] mb-10;
+}
+
+.auth-subtitle {
+  @apply text-16 text-grey-1050;
+}
+
+.auth-input-classes {
+  @apply px-20 py-16 border-[1.5px] border-grey-11 text-15 bg-primary text-dark-1000 rounded-[10px];
+
+  &:focus {
+    @apply border-grey-1000 shadow-grey-1000-05 #{!important};
+  }
+
+  &:hover {
+    @apply text-dark-default;
+  }
+}
+
+.auth-label-classes {
+  @apply font-normal text-14 ml-5 #{!important};
+}
